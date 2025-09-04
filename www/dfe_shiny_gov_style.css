@@ -1,126 +1,51 @@
-/* Fonts ------------------------------------------------------------------- */
-/* main body text */
-body {
-  font-family: "Arial", sans-serif;
-  font-size: 19px;
-  margin-bottom: 20px;
+@font-face {
+  font-family:"GDS Transport";
+  src:url("/fonts/light-94a07e06a1-v2.woff2")
+  format("woff2"),
+  url("/assets/fonts/light-f591b13f7d-v2.woff")
+  format("woff");
+  font-weight:normal;
+  font-style:normal;
+  font-display:fallback
 }
 
-p {
-  font-family: "Arial", sans-serif;
-  font-size: 19px;
-  margin-bottom: 20px;
+@font-face {
+  font-family:"GDS Transport";
+  src:url("/fonts/bold-b542beb274-v2.woff2")
+  format("woff2"),url("/assets/fonts/bold-affa96571d-v2.woff")
+  format("woff");
+  font-weight:bold;
+  font-style:normal;
+  font-display:fallback
 }
 
-/* heading text */
-.govuk-header__link--service-name {
-  font-size: 24px;
-  font-size: 30px;
-  line-height: 1.25;
+html {
+  background-color: #f3f2f1;
 }
 
-.h1,
-h1 {
-  font-family: "Arial", sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.0416666667;
-  margin-top: 0;
-  margin-bottom: 30px;
-}
-
-.h2,
-h2 {
-  font-family: "Arial", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.0416666667;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.h3,
-h3 {
-  font-family: "Arial", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.0416666667;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* feedback banner */
-.govuk-phase-banner__content {
-  font-family: "Arial", sans-serif;
-  font-size: 14px;
-  color: #000000;
-}
-
-/* well text */
-label {
-  font-family: "Arial", sans-serif;
-  font-size: 19px;
-}
-
-
-/* Bullet point formatting ------------------------------------------------- */
-li {
-  margin-bottom: 5px;
-  display: list-item;
-  text-align: -webkit-match-parent;
-  unicode-bidi: isolate;
-}
-
-ul {
-  padding-left: 20px;
-  list-style-type: disc;
-}
-
-/* Link text styling ------------------------------------------------------- */
 a {
-  font-family: "Arial", sans-serif;
-  text-decoration: underline;
-  text-decoration-thickness: max(1px, .0625rem);
-  text-underline-offset: .1578em;
-  word-break: break-word;
-  background-color: transparent;
+  color: 	#1d70b8;
+  text-decoration: underline
+}
+
+a:hover {
+  color: 	#003078;
+  text-decoration: underline
 }
 
 a:visited {
-  color: #4C2C92;
+  color: 	#4c2c92;
+  text-decoration: underline
 }
 
-a:focus {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  color: #0b0c0c;
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
-  text-decoration: none;
-}
-
-/* GOV.UK containers ------------------------------------------------------- */
-.govuk-width-container {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-/*removing white gutters on govheader container */
-.container,
-.container-fluid,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm {
-  --bs-gutter-x: 0;
-  --bs-gutter-y: 0;
+a:active {
+  color: 	#0b0c0c;
+  text-decoration: underline
 }
 
 /* This line sets the main area width. Originally set to 66.667% in the GDS 
 template. 80% works well here to reduce white space on the right hand side.*/
-.col-sm-8 {
-  width: 80%
-}
+.col-sm-8{ width: 80%}
 
 .container-fluid {
   padding: 0px;
@@ -130,187 +55,709 @@ template. 80% works well here to reduce white space on the right hand side.*/
   margin-right: 0px;
 }
 
-/* GOV.UK cookies ---------------------------------------------------------- */
-.govuk-cookie-banner {
-  padding: 6px 6px 6px 6px;
+/* this is the style for the .govuk-main-wrapper class which is used for padding
+   the main page and overrides the CSS defined in http://127.0.0.1:7491/shinyGovstyle/css/govuk-frontend-norem.css */
+
+@media (min-width: 40.0625em)  {
+  .govuk-main-wrapper {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
 }
 
-/* GOV.UK header CSS ------------------------------------------------------- */
-.govuk-header__content,
-.govuk-header__logo {
-  box-sizing: border-box
+/* this is the definition of the left-side navbar */
+.nav-pills > li.nav-item > a {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 1.1428571429;
+  font-size: 15px;
+  padding: 10px;
+  border-left: 4px solid transparent;
+  text-decoration: underline !important;
+  background-color: white !important;
+  color: 	#1d70b8 !important;
+}
+/*
+.nav-pills > li.nav-item > a {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 1.1428571429;
+  font-size: 15px;
+  padding: 10px;
+  border-left: 4px solid transparent;
+  text-decoration: underline !important;
+  background-color: white !important;
+  color: 	#1d70b8 !important;
+}
+*/
+
+/* this rule is solely for the active navbar link */
+.nav-pills > li.nav-item > a.nav-link.active {
+  font-weight: 700;
+  background-color: #1d70b8 !important;
+  color: white !important;
+  border-color: #1d70b8;
+  text-decoration: none !important;
 }
 
-.govuk-header__logo {
-  margin-bottom: 10px;
-  padding-right: 50px
+.nav-pills > li > a:focus,
+.nav-pills > li > a:hover {
+  border-color: #1d70b8;
+  color: #003078 !important;
+}
+
+
+
+#navlistPanel {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+/*
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+  color: #000 !important;
+}
+*/
+
+/*
+.nav-pills > li > a {
+  font-family: "GDS Transport", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-weight: 400;
+  line-height: 1.1428571429;
+  font-size: 15px;
+  padding: 10px;
+  border-left: 4px solid transparent;
+  text-decoration: underline;
+  color: 	#1d70b8 !important;
+}
+*/
+
+/* Tabs layout styling */
+/* question around font-size and weight? */
+
+
+/* this is the div container which holds the tab control */
+.tabbable  {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25
 }
 
 @media (min-width:40.0625em) {
-  .govuk-header__logo {
-    margin-bottom: 10px
-  }
+    .tabbable {
+        margin-bottom: 30px;
+        font-size: 1.1875rem;
+        line-height: 1.3157894737
+    }
 }
 
-@media (min-width:48.0625em) {
-  .govuk-header__logo {
-    width: 15% !important;
-    margin-left: 15px !important;
-    padding-right: 15px !important;
-    float: left !important;
-    vertical-align: top !important;
-  }
+@media print {
+    .tabbable {
+        font-family: sans-serif
+        font-size: 14pt;
+        line-height: 1.15
+    }
 }
 
-@media (min-width:48.0625em) {
-  .govuk-header__content {
-    width: 64% !important;
-    text-align: center !important;
-    padding-left: 15px !important;
-    float: left !important;
-    vertical-align: top !important;
-  }
+/* this sections refers to the equivalent of govuk-tabs__list */
+.tabbable > ul.nav-tabs {
+    padding: 0;
+    list-style: none;
+    margin: 0 0 20px;
+    border-bottom-color: black;
+    border-bottom-width: 0.5px;
 }
 
-/* GOV.UK footer ----------------------------------------------------------- */
-/* footer padding */
-.govuk-footer {
-  padding-right: 50px;
-  padding-left: 50px;
+@media (min-width:40.0625em) {
+    .tabbable > ul.nav-tabs {
+        margin-bottom: 20px
+    }
 }
 
-/* This makes it look like the footer extends on shorter pages  */
-html {
+
+
+/* equates to govuk-tabs__list-item in the GDS website */
+
+
+
+.tabbable li.nav-item {
+  position: relative;
+  margin-right: 5px;
+  margin-bottom: 0;
+  margin-left: 0;
+  float: left;
+  padding 10px 10px;
   background-color: #f3f2f1;
+  text-align: center;
 }
 
-/* GOV.UK details component ------------------------------------------------ */
-.govuk-details {
-  padding: 19px;
-  font-family: "Arial", sans-serif;
+
+
+
+
+.tabbable li:not(:has(a.active))  {
+  background-color: bg-white;
+}
+
+
+/* equates to govuk-tabs__tab in the GDS website */
+
+
+.tabbable li.nav-item > a {
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .2578em;
+    display: inline-block;
+    margin-bottom: 0px;
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+@media print {
+    .tabbable li.nav-item > a {
+        font-family: sans-serif
+        border-color: white;
+    }
+}
+
+.tabbable li.nav-item > a.active {
+    text-decoration: none;
+    border-color: black;
+    border-width: 0.5px;
+    border-bottom: white;
+}
+
+.tabbable li.nav-item > a.nav-link:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none
+}
+
+.tabbable li.nav-item > a.nav-link:focus {
+    outline: 3px solid transparent;
+    background-color: #fd0;
+    box-shadow: 0px 0px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone
+}
+
+.govuk-grid-row {
+    margin-right: 0px;
+    margin-left: -0px;
+}
+
+
+==============================
+
+
+
+
+.tabbable li > a:visited {
+    color: #4c2c92
+}
+
+.tabbable li > a:hover {
+    color: rgba(11,12,12,.99);
+}
+}
+
+.tabbable li > a:active, .tabbable li > a:focus {
+    color: #0b0c0c
+}
+
+============================================================
+
+/* style the margin in the main wrapper for the 3rd div (i.e. the user feedback text) */
+
+main:nth-child(3) {
+  margin-bottom: 30px;
+  /* padding: 100px 0 !important; */
+}
+
+/*
+{
+  font-family: "GDS Transport", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 25px;
-  background-color: #1d70b8;
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 20px;
-  display: block;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
+  -moz-osx-font-smoothing: grayscale;
+  font-size:18px;
+  font-weight:500;
+}
+
+.govuk-tabs 
+
+
+
+
+.nav-tabs > li > a {
+  text-decoration: none;
+  color: #000;
+  font-weight: normal;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  position: relative;
+  margin-top: -5px;
+  margin-bottom: -1px;
+  padding-top: 14px;
+  padding-right: 19px;
+  padding-bottom: 16px;
+  padding-left: 19px;
+  border: 2px solid #b1b4b6;
+  border-bottom: 0;
+  background-color: #fff;
+  text-decoration: none;
+  font-weight: bold !important;
+  color: #000;
+
+}
+*/
+.well {
+    min-height: 90vh;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #1d70b8;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+    color: #fff;
+}
+
+/* header fonts */
+.h1, .h2 .h3, .h4, h1 ,h2, h3, h4{
+  font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 27px !important;
+  margin-bottom: 20px !important;
+}
+
+
+
+.p,p{
+  font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  font-size: 19px;
+}
+
+.shiny-html-output,shiny-bound-output{
+  font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  font-size: 20px;
+}
+
+/* Changing the inputs */
+.selectize-input {
+    border: 2px solid #ccc;
+    padding: 6px 12px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    box-shadow: none;
+    border-radius: 0px;
+    border-color: black;
+}
+
+/* styling required for the checkboxes used to compare with regional/national/SN */
+.geo_input_box .govuk-checkboxes--small .govuk-checkboxes__label:before {
+  background-color: white;
+}
+
+
+.govuk-details{
+  background-color:#fff;
+  color: #000;
+  padding: 0px;
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 19px;
+  
 }
 
 .govuk-details__summary {
-  display: inline-block;
-  position: relative;
-  margin-bottom: 5px;
-  padding-left: 25px;
-  color: #fff;
-  cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5px;
+    padding-left: 25px;
+    color: #000;
+    cursor: pointer;
 }
 
 .govuk-details__summary-text:hover {
-  text-decoration: underline;
-  text-decoration-thickness: max(4px, .1875rem, .12em);
+    text-decoration: underline;
+    text-decoration-thickness: max(4px, .1875rem, .12em);
 }
 
 .govuk-details__summary:hover {
-  color: #fff;
+    color: #000;
 }
 
 .govuk-details__summary:focus {
-  outline: 3px solid rgba(0, 0, 0, 0);
-  /* color: #0b0c0c; */
-  background-color: #fd0;
-  box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
-  color: #0b0c0c;
-  text-decoration: none;
+    outline: 3px solid rgba(0, 0, 0, 0);
+    /* color: #0b0c0c; */
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    color: #0b0c0c;
+    text-decoration: none;
 }
 
-/* GOV.UK select component ------------------------------------------------- */
-
-.govuk-select {
-  color: black;
+/*Accordion CSS*/
+.accordion {
+    --bs-accordion-color: #212529;
+    --bs-accordion-bg: #fff;
+    --bs-accordion-transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+    --bs-accordion-border-color: var(--bs-border-color);
+    --bs-accordion-border-width: 1px;
+    --bs-accordion-border-radius: .375rem;
+    --bs-accordion-inner-border-radius: calc(.375rem - 1px);
+    --bs-accordion-btn-padding-x: 1.25rem;
+    --bs-accordion-btn-padding-y: 1rem;
+    --bs-accordion-btn-color: #212529;
+    --bs-accordion-btn-bg: var(--bs-accordion-bg);
+    --bs-accordion-btn-icon: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
+    --bs-accordion-btn-icon-width: 1.25rem;
+    --bs-accordion-btn-icon-transform: rotate(-180deg);
+    --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+    --bs-accordion-btn-active-icon: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill=''%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
+    --bs-accordion-btn-focus-border-color: #86b7fe;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(13,110,253,0.25);
+    --bs-accordion-body-padding-x: 1.25rem;
+    --bs-accordion-body-padding-y: 1rem;
+    --bs-accordion-active-color: ;
+    --bs-accordion-active-bg: ;
 }
 
-.govuk-label {
-  color: white !important;
+
+.shiny-output-error-validation {
+  color:red !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
 }
 
-/* Left nav tabs styling --------------------------------------------------- */
 
-.nav-stacked>li>a {
-  text-decoration: none; /* Remove underlining */
+/*CSS for extra dropdown details */
+/*.govuk-details {
+    padding: 19px;
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 25px;
+    background-color: #1d70b8;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 20px;
+    display: block;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+}*/
+/*#tbl_vacancy_rate{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+#tbl_vacancy_rate .govuk-details__summary{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+
+#tbl_vacancy_rate .govuk-details__summary-text:hover{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+
+#table_agency_worker{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+#table_agency_worker .govuk-details__summary{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+
+#table_agency_worker .govuk-details__summary-text:hover{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+
+#table_s_w_turnover{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+#table_s_w_turnover .govuk-details__summary{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+
+#table_s_w_turnover .govuk-details__summary-text:hover{
+    background-color: #fff;
+    font-size: 16px !important;
+    border: 1px solid #e3e3e3;
+    color: black !important;
+}
+*/
+
+/*.card_nat_stats_test{
+  background-color: #1d70b8!important;
+}*/
+
+.bg-dark-blue {
+  background-color: #fff!important;
   color: #000;
+  font-size: 22px;
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /*border: 4px solid #1d70b8;*/
 }
 
-.nav-stacked>li>a:focus {
-  background-color: #fd0;
-  box-shadow: 0 0px #fd0, 0 4px #1d70b8;
-}
-
-.nav-stacked>li>a:hover {
+.geo_input_box{
+  background-color: #e5e6e7;
+  padding: 19px 19px 0px 19px;
+  margin-bottom: 40px;
+  height: 100%;
+  min-height: 100%;
   color: #000;
-  font-weight: bold;
-  background-color: #b1b4b6;
+  font-size: 20px;
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+    border-radius: 4px;
 }
 
-.nav-pills>li.active>a {
-  color: #ffffff;
-  background-color: #1d70b8;
-  box-shadow: 0 0px #b1b4b6, 0 4px #1d70b8;
-}
-
-.nav-pills>li.active>a:focus {
-  color: #000;
-  background-color: #fd0;
-  box-shadow: 0 0px #b1b4b6, 0 4px #1d70b8;
-}
-
-/* Tabs layout styling ----------------------------------------------------- */
-.nav-tabs>li>a {
-  color: #000;
-  text-decoration: none /* Remove underlining */
-}
-
-.nav-tabs>li>a:focus {
-  background-color: #fd0 !important;
-  box-shadow: 0 0px #fd0, 0 4px #1d70b8 !important;
-}
-
-.nav-tabs>li>a:hover {
-  color: #000;
-  font-weight: bold;
-  background-color: #b1b4b6;
-}
-
-/* Well panel CSS used in user selections ---------------------------------- */
-.well {
-  min-height: 90vh;
+.input_box{
+  background-color: #fff;
   padding: 19px;
-  margin-bottom: 20px;
-  background-color: #1d70b8;
-  border: 1px solid #e3e3e3;
+  height: 100%;
+  min-height: 100%;
+  color: #000;
+  font-size: 20px;
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  border: 3px solid #1d70b8;
   border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
-  box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
-  color: #fff;
 }
 
-/* Ensure the dynamic-height class adjusts to fit its content */
-.well.dynamic-height {
-  min-height: auto !important; /* Override default min-height */
-  height: auto !important;     /* Adjust height dynamically */
-  display: block !important;   /* Ensure it wraps its content */
-  padding: 15px;               /* Adjust padding for proper spacing */
-  margin-bottom: 20px;
-  background-color: #1d70b8;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  color: #fff;
+
+
+/* Headline Stats boxes */
+.card, .well{
+  --bs-card-color: #white !important;
+  --bs-card-spacer-y: 0em;
+  --bs-card-spacer-x: 0em;
+  
 }
 
-/* Custom value boxes CSS -------------------------------------------------- */
-/* Set the font sizes */
+.bslib-value-box.default {
+    --bslib-value-box-bg-default: #1d70b8 !important;
+    border-radius: 4px;
+}
+
+.bslib-value-box .value-box-area{
+  padding: 0.5em 0.5em;
+}
+
+.bslib-value-box .value-box-area>:first-child{
+  background-color: #1d70b8!important;
+  color: #fff;
+  font-size: 19px !important;
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+  font-weight: 700;
+  padding: 0.5em, 0.5em;
+}
+
+.bslib-value-box .value-box-area>:nth-child(2){
+  background-color: #1d70b8!important;
+  color: #fff;
+  font-size: 48px !important;
+  font-family: GDS Transport, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.5em, 0.5em !important;
+  /*line-height: 1.25;*/
+}
+
+
+/* Full screen plots */
+/* Adapted from https://stackoverflow.com/questions/69042546/is-there-a-way-to-create-a-full-screen-popup-window-of-a-plotly-chart-in-r */
+.plot-zoom {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    bottom: 0;
+    right: 0;
+
+}
+
+.full-screen {
+    position: fixed;
+    height: 99vh !important;
+    width: 99vw !important;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+
+.small-box.bg-purple {
+    background-color: 	#801650 !important;
+    color: #ffffff;
+}
+
+.small-box.bg-white {
+    background-color: 	#ffffff !important;
+    color: #000000;
+}
+
+
+.small-box.bg-blue{
+     background-color: #1d70b8 !important; 
+     color: #ffffff;
+     padding: 120px;
+     margin:10px;
+}
+
+.small-box.bg-orange{
+     background-color: #F46A25 !important; 
+     color: #ffffff;
+}
+
+.small-box.bg-red{
+     background-color: #f499be !important; 
+     color: #ffffff;
+}
+
+.small-box.bg-green{
+     background-color: 	#00703c !important; 
+     color: #ffffff;
+}
+
+.small-box.bg-dark-blue{
+     background-color: 	#12436D !important; 
+     color: #ffffff;
+}
+
+#ss-connect-dialog { display: none !important; }
+#shiny-disconnected-overlay { display: none !important; }
+        
+#ss-overlay {
+             background-color: #000000 !important;
+             opacity: 0.6 !important;
+             position: fixed !important;
+             top: 0 !important;
+             left: 0 !important;
+             bottom: 0 !important;
+             right: 0 !important;
+             z-index: 99998 !important;
+             overflow: hidden !important;
+             cursor: not-allowed !important;
+          }
+          
+#custom-disconnect-dialog {
+             background: #ffffff !important;
+             color: #000000 !important;
+             width: full !important;
+             transform: translateX(-50%) translateY(-50%) !important;
+             font-size: 16px !important;
+             top: 50% !important;
+             position: fixed !important;
+             bottom: auto !important;
+             left: 50% !important;
+             padding: 0.8em 1.5em !important;
+             text-align: center !important;
+             height: auto !important;
+             opacity: 1 !important;
+             z-index: 99999 !important;
+             border-style: solid !important;
+             border-color: #ffdd00 !important;
+             border-width: 0.25em !important;
+             box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 10px !important;
+          }
+
+.govuk-width-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.govuk-header__content,
+.govuk-header__logo {
+    box-sizing: border-box
+}
+
+.govuk-header__logo {
+    margin-bottom: 10px;
+    padding-right: 50px
+}
+
+@media (min-width:40.0625em) {
+    .govuk-header__logo {
+        margin-bottom: 10px
+    }
+}
+
+@media (min-width:48.0625em) {
+    .govuk-header__logo {
+  width: 15% !important;
+  margin-left: 15px !important;
+        padding-right: 15px !important;
+        float: left !important;
+        vertical-align: top !important;
+    }
+}
+
+@media (min-width:48.0625em) {
+    .govuk-header__content {
+  width: 64% !important;
+  text-align: center !important;
+        padding-left: 15px !important;
+        float: left !important;
+        vertical-align: top !important;
+    }
+}
+
 #vboxhead-small {
   text-align: left;
   font-weight: bold;
@@ -347,139 +794,412 @@ html {
   font-size: 28px;
 }
 
-/* Set the colours for the value boxes */
-.small-box.bg-purple {
-  background-color: #801650 !important;
-  color: #ffffff !important;
+
+@media (min-width: 40.0625em){
+  .govuk-footer{
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14286;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-top: 1px solid #b1b4b6;
+    color: #0b0c0c;
+    background: #f3f2f1;
+    display: inline-block;
+    width: 100%;
+    bottom: 0;
+  }
 }
 
-.small-box.bg-white {
-  background-color: #ffffff !important;
-  color: #000000 !important;
+.govuk-footer__meta {
+    margin-right: 200px !important;
+    margin-left: 200px !important;
+}
+/*
+btn is the user guide button
+*/
+.btn {
+    font-size:19px !important;
+    font-family: GDS Transport, arial, sans-serif !important;
+    }
+    
+.btn-default {
+  border-color: #1d70b8 !important;
+  border-width: medium !important;
 }
 
-.small-box.bg-blue {
+/* Hide the last page on the navlist bar (user guide page)*/
+/*#navlistPanel > li:nth-child(12) {
+  display: none;
+}*/
+
+/*#navlistPanel > li:last-child(){
+  display: none;
+}*/
+
+
+/*Domain tab styling */
+/*.tabbable > .tab-content {
+  padding: 30px 20px;*/
+  /* border: 1px solid #b1b4b6; old darker grey */
+/*  border: 1px solid #BBBEBE;
+  border-top: 0
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus, 
+.nav-tabs > li.active > a:hover {
+  position: relative;
+  margin-top: -5px;
+  margin-bottom: -1px;
+  padding-top: 14px;
+  padding-right: 19px;
+  padding-bottom: 16px;
+  padding-left: 19px;*/
+  /* border: 1px solid #b1b4b6; old darker grey */
+/*  border: 1px solid #BBBEBE;
+  border-bottom: 0;
+  background-color: #fff;
+}
+
+.nav-tabs > li.active > a {
+  font-family: "GDS Transport", arial, sans-serif;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+}
+
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  font-family: "GDS Transport", arial, sans-serif;
+  background-color: white;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-tabs > li {
+  position: relative;
+  margin-right: 5px;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding: 10px 20px;
+  float: left;
+  background-color: #f3f2f1;
+  text-align: center;
+}*/
+/*
+.nav-tabs > li.active {
+  position: relative;
+  margin-bottom: -1px;
+  padding-top: 14px;
+  padding-right: 19px;
+  padding-bottom: 16px;
+  padding-left: 19px;*/
+  /* border: 1px solid #b1b4b6; old darker grey */
+/*  border: 1px solid #BBBEBE;
+  border-bottom: 0;
+  background-color: #fff;
+}*/
+/*
+.nav-tabs > li > a {
+  font-family: "GDS Transport", arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1em;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #0b0c0c;
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.nav-tabs > li > a:hover {
+  font-family: "GDS Transport", arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: underline;
+  text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+  text-underline-offset: 0.1em;
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #0b0c0c;
+  font-weight: 400;
+  font-size: 19px;
+  border-color: transparent;
+  background-color: transparent;
+} */
+
+
+/* Nav bar headings */
+.navbar-brand{
+  --bs-navbar-brand-color: #3D3D3D;
+  font-family: "GDS Transport", arial, sans-serif !important;
+  font-weight: 700;
+  margin-left: 8px;
+  padding-top: 12px;
+
+  
+}
+
+
+/* -------------- Summary Page CSS -------------- */
+/* There are a number of aspects of styling related to the summary page including the accordions, tabs, sub tables and header tables, domain text*/
+
+#summary_page_outcomes .accordion .accordion-header,
+#summary_page_enablers .accordion .accordion-header {
   background-color: #1d70b8 !important;
-  color: #ffffff !important;
+  color: white !important;
 }
 
-.small-box.bg-orange {
-  background-color: #F46A25 !important;
-  color: #ffffff !important;
+#summary_page_outcomes .accordion-body,
+#summary_page_enablers .accordion-body {
+    padding: 0px  15px !important;
 }
 
-.small-box.bg-red {
-  background-color: #f499be !important;
-  color: #ffffff !important;
+#summary_page_outcomes .accordion-button,
+#summary_page_enablers .accordion-button {
+  background-color: #1d70b8 !important;
+  color: #fff !important;
+  padding-left: 16px !important;
 }
 
-.small-box.bg-green {
-  background-color: #00703c !important;
-  color: #ffffff !important;
+#summary_page_outcomes .accordion-button::after,
+#summary_page_enablers .accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+ }
+
+#summary_page_outcomes .accordion-title,
+#summary_page_enablers .accordion-title {
+  background-color: #1d70b8 !important;
+  color: white !important;
+  font-size: 24px !important;
+  padding-left: 0px !important;
 }
 
-.small-box.bg-dark-blue {
-  background-color: #12436D !important;
-  color: #ffffff !important;
+#summary_page_outcomes div[id$="-domain_text"],
+#summary_page_enablers div[id$="-domain_text"] {
+  background-color: white !important;
+  line-height: 45px !important;
+  font-size: 19px !important;
+  font-weight: 550 !important;
 }
 
-/* Set default reactable styles */
-.reactable {
-  font-size: 1rem !important;
-  table-layout: fixed;
-  width: 100% !important;
-  word-break: keep-all; /* Prevents breaking words mid-word */
-  white-space: normal; /* Allows line breaks between words */
-}
-.bar-sort-header:hover,
-.bar-sort-header:focus {
-  background: #fd0;
-}
-
-/* Add a top bar on ascending sort */
-.bar-sort-header[aria-sort="ascending"] {
-  box-shadow: inset 0 0.188rem 0 0 #1d70b8;
+/* Visually hide column headers, but keep them accessible to screen reader users. */
+.hidden-column-headers .rt-thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  font-size: 19px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-/* Add a bottom bar on descending sort */
-.bar-sort-header[aria-sort="descending"] {
-  box-shadow: inset 0 -0.188rem 0 0 #1d70b8;
+/* this hides the body of the table containing the column headers to display at the top of the accordion */
+.hidden-table-body .rt-tr-group {
+    display: none !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: none;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: auto;
 }
 
-/* Add an animation when toggling between ascending and descending sort */
-.bar-sort-header {
-  transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+/* For the column headings add some left padding to the first column to align with other elements */
+#summary_page_outcomes > .hidden-table-body > .rt-tr-header:first-child > :first-child,
+#summary_page_enablers > .hidden-table-body > .rt-tr-header:first-child > :first-child {
+  padding-left:8px !important;
 }
 
-/* Table row highlighting -------------------------------------------------- */
-.rt-tr-highlight:hover {
+/* For the domain text */ 
+#summary_page_outcomes div[id$="-domain_text"],
+#summary_page_enablers div[id$="-domain_text"] {
+  padding-left:14px !important;
+}
+
+#summary_page_outcomes [id$="-domain_table"] .rt-tr:first-child > :first-child,
+#summary_page_enablers [id$="-domain_table"] .rt-tr:first-child > :first-child {
+  padding-left:8px !important;
+} 
+
+
+
+.hidden-table-body .rt-th-inner {
+  font-size: 19px;
+}
+
+.hidden-table-headers .rt-tr-inner {
+  font-size: 16px;
+}
+
+.hidden-table-headers .rt-tr-inner {
+  font-size: 19px;
+}
+div .hidden-table-body,
+div .hidden-column-headers {
+  padding-left: 0px !important;
+}
+
+
+div .panel.card.mb-3.panel-default.border-default {
+  visibility: hidden !important;
+  display: none !important;
+  
+  
+}
+
+/* For the summary page selected tab 
+#summary_page_panels a.active {
+  font-weight: bold !important;
+}
+*/
+
+
+
+.govuk-button, .download-button-summary-page  {
+  
+    font-family: GDS Transport, arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.1875;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin: 0 0 22px;
+    padding: 8px 10px 7px;
+    border: 2px solid transparent;
+    border-radius: 0;
+    color: #fff;
+    background-color: #00703c;
+    box-shadow: 0 2px 0 #002d18;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    -webkit-appearance: none
+
+}
+
+/* GovStyle button */
+.govuk-button {
+    width: 100%;
+}
+
+@media print {
+    .govuk-button, .download-button-summary-page {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width:40.0625em) {
+    .govuk-button, .download-button-summary-page {
+        font-size: 1.1875rem;
+        line-height: 1
+    }
+}
+
+@media print {
+    .govuk-button, .download-button-summary-page {
+        font-size: 14pt;
+        line-height: 19px
+    }
+}
+
+@media (min-width:40.0625em) {
+    .govuk-button {
+        margin-bottom: 12px;
+        width: auto
+    }
+}
+
+.govuk-button:active, .govuk-button:hover, .govuk-button:link, .govuk-button:visited,
+.download-button-summary-page:active, .download-button-summary-page:hover, .download-button-summary-page:link, .download-button-summary-page:visited{
+    color: #fff;
+    text-decoration: none
+}
+
+.govuk-button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+.govuk-button:hover, .download-button-summary-page:hover {
+    background-color: #005a30
+}
+
+.govuk-button:active {
+    top: 2px
+}
+
+.govuk-button:focus, .download-button-summary-page:focus {
+    border-color: #fd0;
+    outline: 3px solid transparent;
+    box-shadow: inset 0 0 0 1px #fd0
+}
+
+.govuk-button:focus:not(:active):not(:hover),
+.download-button-summary-page:focus:not(:active):not(:hover) {
+    border-color: #fd0;
+    color: #0b0c0c;
     background-color: #fd0;
-}
-@media screen and (min-width: 1440px) {
-  .bslib-sidebar-layout .sidebar-title {
-    font-size: 1.188rem !important;  /* Slightly larger font size for large monitors */
-  }
+    box-shadow: 0 2px 0 #0b0c0c
 }
 
-@media screen and (min-width: 1240px) {
-  .bslib-sidebar-layout .sidebar-title {
-    font-size: 1.1rem !important;  /* Slightly larger font size for large laptops */
-  }
+.govuk-button:before,
+.download-button-summary-page:before {  
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -4px;
+    left: -2px;
+    background: transparent
 }
 
-/* Media query for laptop screens (1024px or smaller) */
-@media screen and (max-width: 1024px) {
-  .reactable,
-  .bslib-sidebar-layout > .sidebar > .sidebar-content label,
-  .selectize-control.multi .selectize-input.has-items {
-    font-size: 0.9rem !important; /* Slightly smaller font size for laptops */
-  }
+.govuk-button:active:before {
+    top: -4px
 }
 
-/* Media query for tablet-sized screens (768px or smaller) */
-@media screen and (max-width: 768px) {
-  .reactable,
-  .bslib-sidebar-layout > .sidebar > .sidebar-content label,
-  .selectize-control.multi .selectize-input.has-items {
-    font-size: 0.8rem !important; /* Smaller font size for tablets */
-  }
+.govuk-button[disabled] {
+    opacity: .5
 }
 
-/* Media query for small screens (480px or smaller) */
-@media screen and (max-width: 480px) {
-  .reactable,
-  .bslib-sidebar-layout > .sidebar > .sidebar-content label,
-  .selectize-control.multi .selectize-input.has-items {
-    font-size: 0.7rem !important; /* Even smaller font size for mobile */
-  }
+.govuk-button[disabled]:hover {
+    background-color: #00703c;
+    cursor: not-allowed
 }
 
-/* selectize dropdown options */
-.selectize-input {
-  font-family: "Helvetica Neue", "Arial", sans-serif;
-  font-size: 1.188rem;
-  color: #000000;
+.download-button-summary-page {
+    position: absolute;
+    right: 1em;
+    margin-top: 5px;
+    
 }
 
-/* dropdowns CSS ----------------------------------------------------------- */
-.selectize-input:hover,
-.selectize-input:active,
-.selectize-input:focus {
-  box-shadow: inset 0 -0.188rem 0 0 #1d70b8;
+/* sort out the download as csv button above the reactable to be on the right with the search box on the left in line */
+.rt-search {
+  align-self: baseline;
 }
 
-
-/* Change focus border color to yellow */
-.selectize-input.focus {
-    border-color: #fd0 !important;
-    box-shadow: 0 0 0.313rem #fd0 !important;
+/* this rule should override the above rule */
+details div.govuk-grid-row .govuk-button {
+    top: 45px;
+    z-index: 9;
+}
+details div.govuk-grid-row:has(button) {
+  margin-top: -40px;
 }
 
-
-/* Change focus color to bright yellow */
-.selectize-dropdown-content .option:hover,
-.selectize-dropdown-content .option:focus,
-.selectize-dropdown-content .option.active {
-    background-color: #fd0 !important;
-    color: black !important;
-}
