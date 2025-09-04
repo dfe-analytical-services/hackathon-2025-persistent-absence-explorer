@@ -122,20 +122,24 @@ df_areas <- df_revbal %>%
   ) %>%
   distinct()
 
-df_upper_tier_geo <- read_upper_tier_data()
+df_PA_base <- load_PA_data()
 
-df_upper_tier_all <- df_upper_tier_geo %>%
-  dplyr::select(new_la_code, LONG, LAT, geometry) %>%
-  inner_join(df_revbal,
-    by = "new_la_code"
-  ) %>%
-  rowwise() %>%
-  mutate(lab = HTML(sprintf(
-    "<b> %s </b> </br> %s </br> %s %s",
-    strong(area_name),
-    "Schools with deficit",
-    PC_schools_with_deficit, "%"
-  )))
+df_PA_map <- load_map_data_wPA(df_PA_base)
+
+# df_upper_tier_geo <- read_upper_tier_data()
+
+# df_upper_tier_all <- df_upper_tier_geo %>%
+#   dplyr::select(new_la_code, LONG, LAT, geometry) %>%
+#   inner_join(df_revbal,
+#     by = "new_la_code"
+#   ) %>%
+#   rowwise() %>%
+#   mutate(lab = HTML(sprintf(
+#     "<b> %s </b> </br> %s </br> %s %s",
+#     strong(area_name),
+#     "Schools with deficit",
+#     PC_schools_with_deficit, "%"
+#   )))
 
 # Extract lists for use in drop downs -----------------------------------------
 # LA list

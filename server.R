@@ -429,9 +429,10 @@ server <- function(input, output, session) {
   )
 
   # Map rendering
-  output$mapOut <- renderLeaflet({
-    reactive_map_to_display()
+  output$map_PA <- renderLeaflet({
+    PA_leaflet_plot(phase = input$phase_selected, geographic_level = input$select_geography, geograpic_breakdown = input$geographic_breakdown)
   })
+
 
   # Benchmarking bar chart
   output$colBenchmark <- renderGirafe({
