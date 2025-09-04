@@ -1,11 +1,12 @@
 # function to produce the leaflet visualisation:
 
-PA_leaflet_plot <- function(phase = c("Primary", "Secondary", "Special", "All schools"),
+PA_leaflet_plot <- function(df,
+                            phase = c("Primary", "Secondary", "Special", "All schools"),
                             geographic_level = c("National", "Regional", "Local authority"),
                             geograpic_breakdown = NULL) {
   phase <- match.arg(phase)
   geographic_level <- match.arg(geographic_level)
-  pa_wGeom <- pa_wGeom %>% filter(education_phase == phase)
+  pa_wGeom <- df %>% filter(school_type == phase)
   # Adjust filtering logic depending on level chosen region_name
   if (geographic_level == "National") {
     # Show Regions if "National"

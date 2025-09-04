@@ -430,7 +430,12 @@ server <- function(input, output, session) {
 
   # Map rendering
   output$map_PA <- renderLeaflet({
-    PA_leaflet_plot(phase = input$phase_selected, geographic_level = input$select_geography, geograpic_breakdown = input$geographic_breakdown)
+    PA_leaflet_plot(
+      df = df_PA_map,
+      phase = "Secondary", # input$phase_selected,
+      geographic_level = input$select_geography,
+      geograpic_breakdown = input$geographic_breakdown
+    )
   })
 
 
