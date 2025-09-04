@@ -79,6 +79,23 @@ server <- function(input, output, session) {
     google_analytics_key = google_analytics_key
   )
 
+  # Geographic breakdown (list of either LA names or Region names)
+  observeEvent(eventExpr = {
+    input$select_geography
+  }, {
+    # browser()
+    choices <- sort(unique(geo_mappings[(geo_mappings$geographic_level == input$select_geography)]$geo_breakdown), decreasing = FALSE)
+
+    updateSelectizeInput(
+      session = session,
+      inputId = "geographic_breakdown",
+      selected = choices[1],
+      choices = choices,
+    )
+  })
+
+
+
   # Dataset with timeseries data ----------------------------------------------
   reactive_rev_bal <- reactive({
     df_revbal %>% filter(

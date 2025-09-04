@@ -71,9 +71,11 @@ source("R/helper_functions.R")
 
 gbp <- enc2utf8("\u00A3")
 
+# Source all files in the  folder
+lapply(list.files("R/", full.names = TRUE, pattern = ".R"), source)
+
 # Source all files in the ui_panels folder
 lapply(list.files("R/ui_panels/", full.names = TRUE), source)
-
 # Set global variables --------------------------------------------------------
 
 site_title <- "Department for Education (DfE) Shiny Template" # name of app
@@ -109,7 +111,7 @@ register_font(
 showtext_auto()
 
 # Read in the data ------------------------------------------------------------
-df_revbal <- read_revenue_data()
+geo_mappings <- read_geo_mappings()
 
 # Get geographical areas from data
 df_areas <- df_revbal %>%
