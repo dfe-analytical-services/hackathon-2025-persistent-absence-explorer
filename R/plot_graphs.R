@@ -57,7 +57,7 @@ pa_series <- week_29_pa %>%
 input <- data.frame(
   la_choice = "Hartlepool",
   geographic_level = "Local authority",
-  phase_key = "Secondary",
+  education_phase = "Secondary",
   stringsAsFactors = FALSE
 )
 
@@ -112,7 +112,7 @@ pa_series_LA <- pa_series %>%
     time_frame,
     region_name,
     region_code,
-    phase_key,
+    education_phase,
     persistent_absence_percent_regional
   ),
   by = c(
@@ -121,7 +121,7 @@ pa_series_LA <- pa_series %>%
     "time_frame",
     "region_name",
     "region_code",
-    "phase_key"
+    "education_phase"
   )
   ) %>%
   left_join(., select(
@@ -131,7 +131,7 @@ pa_series_LA <- pa_series %>%
     time_frame,
     country_name,
     country_code,
-    phase_key,
+    education_phase,
     persistent_absence_percent_national
   ),
   by = c(
@@ -140,7 +140,7 @@ pa_series_LA <- pa_series %>%
     "time_frame",
     "country_name",
     "country_code",
-    "phase_key"
+    "education_phase"
   )
   ) %>%
   mutate(
@@ -191,7 +191,7 @@ plot_line_chart <- function(filtered_data, input) {
           la_name == input$la_choice),
       # take highest value of time_identifier
       time_identifier == max(time_identifier),
-      phase_key == input$phase_key
+      education_phase == input$education_phase
     ) %>%
     group_by(
       geographic_level,
@@ -233,7 +233,7 @@ plot_bar_chart <- function(filtered_data, input) {
           la_name == input$la_choice),
       # take highest value of time_identifier
       time_identifier == max(time_identifier),
-      phase_key == input$phase_key
+      education_phase == input$education_phase
     ) %>%
     group_by(
       geographic_level,
@@ -279,13 +279,13 @@ check <- pa_series %>%
       (region_name %in% parent_region),
     # take highest value of time_identifier
     time_identifier == max(time_identifier),
-    phase_key == input$phase_key
+    education_phase == input$education_phase
   ) %>%
   select(
     geographic_level,
     region_name,
     la_name,
-    phase_key,
+    education_phase,
     `2025`,
     `2024`,
     `2023`
