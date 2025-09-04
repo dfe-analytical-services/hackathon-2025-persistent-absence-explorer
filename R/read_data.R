@@ -13,6 +13,12 @@
 # datafiles_log.csv.
 # -----------------------------------------------------------------------------
 
+# Geo-Mappings
+read_geo_mappings <- function() {
+  data.table::fread("./data/geo_mappings.csv")
+}
+
+
 # Revenue data ----------------------------------------------------------------
 read_revenue_data <- function(file = "data/la_maintained_schools_revenue_reserve_final.csv") {
   # This reads in an example file. For the purposes of this demo, we're using
