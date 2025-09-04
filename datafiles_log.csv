@@ -4,3 +4,4 @@ data/some_unpublished_data.csv,unpublished
 data/week_29_persistent_absence.csv,published
 data/geo_mappings.csv,published
 data/attendance_data_dashboard/EES_ytd_data.csv,published
+data/persistent_absence_merged.csv,published
