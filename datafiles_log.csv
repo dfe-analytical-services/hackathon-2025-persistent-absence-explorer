@@ -2,3 +2,5 @@ filename,status
 data/la_maintained_schools_revenue_reserve_final.csv,published
 data/some_unpublished_data.csv,unpublished
 data/week_29_persistent_absence.csv,published
+data/attendance_data_dashboard/EES_weekly_data.csv,published
+data/attendance_data_dashboard/EES_ytd_data.csv,published
