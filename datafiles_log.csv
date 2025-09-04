@@ -4,3 +4,6 @@ data/some_unpublished_data.csv,unpublished
 data/week_29_persistent_absence.csv,published
 data/geo_mappings.csv,published
 data/attendance_data_dashboard/EES_ytd_data.csv,published
+data/Counties_and_Unitary_Authorities_December_2024_Boundaries_UK_BUC.geojson,published
+data/Regions_December_2024_Boundaries_EN_BUC.geojson,published
+data/persistent_absence_merged.csv,published
