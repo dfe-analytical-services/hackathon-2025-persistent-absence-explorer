@@ -38,6 +38,7 @@ shhh(library(openxlsx))
 shhh(library(dplyr))
 shhh(library(stringr))
 shhh(library(ggiraph))
+shhh(library(data.table))
 
 # Shiny extensions
 shhh(library(shinyjs))
@@ -112,6 +113,33 @@ showtext_auto()
 
 # Read in the data ------------------------------------------------------------
 geo_mappings <- read_geo_mappings()
+
+# RT datafiles
+
+week_29_pa <- fread("data/week_29_persistent_absence.csv")
+pa_merged <- fread("data/persistent_absence_merged.csv")
+
+# Prepare data
+pa_merged <- pa_merged %>%
+  # mutate time identifier to numeric (and remove text)
+  mutate(
+    persistent_absence_percent = as.numeric(persistent_absence_percent),
+    geo_breakdown = case_when(
+      geographic_level == "National" ~ "National", # NA_character_,
+      geographic_level == "Regional" ~ region_name,
+      geographic_level == "Local authority" ~ la_name
+    ),
+    time_identifier = as.numeric(gsub("Week ", "", time_identifier)),
+    geographic_level = factor(geographic_level,
+      levels = c(
+        "National",
+        "Regional",
+        "Local authority"
+      )
+    )
+  )
+
+
 
 # Get geographical areas from data
 df_areas <- df_revbal %>%
